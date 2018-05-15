@@ -10,6 +10,7 @@
   </table>
 </form>
 <?php
+error_reporting(0);
 $ukuran = $_POST['ukuran'];
 $c = $ukuran - 1;
 if (isset($_POST['cetak'])) {
