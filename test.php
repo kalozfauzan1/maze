@@ -13,24 +13,29 @@
 error_reporting(0);
 $ukuran = $_POST['ukuran'];
 $c = $ukuran - 1;
+$z = 1;
+$j = 3;
 if (isset($_POST['cetak'])) {
   for ($i=1; $i <= $ukuran; $i++) {
     for ($a=1; $a <= $ukuran; $a++) {
       if ($a == 1 || $a == $ukuran) {
-        echo "0";
+        echo "@";
       }else{
         if ($i % 2 == 0) {
-          echo "&nbsp;&nbsp;";
+          echo "&nbsp;&nbsp;&nbsp;  ";
         }else {
           if ($a == 2 && $i == 1) {
-            echo "&nbsp;&nbsp;";
-          }elseif ($a == 2 && $i % 5 == 0) {
-            echo "&nbsp;&nbsp;";
-          }elseif ($a == $c && $i % 3 == 0 ) {
-            echo "&nbsp;&nbsp;";
+            echo "&nbsp;&nbsp;&nbsp;";
+            $z = $z + 4;
+          }elseif ($a == 2 && $i == $z) {
+            echo "&nbsp;&nbsp;&nbsp;";
+            $z = $z + 4;
+          }elseif ($a == $c && $i == $j ) {
+            echo "&nbsp;&nbsp;&nbsp;";
+            $j = $j + 4;
           }
           else{
-              echo "0";
+              echo "@";
           }
         }
       }
